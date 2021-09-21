@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListAirlinesVC" customModule="Airlines_Master_Details" customModuleProvider="target">
             <connections>
+                <outlet property="floatingBtn" destination="D9T-fo-rIc" id="arF-S8-D6U"/>
                 <outlet property="listingView" destination="nb3-PG-sDC" id="AsX-Ps-YwF"/>
                 <outlet property="searchBtn" destination="HZh-ui-hZL" id="oWG-M9-aPL"/>
                 <outlet property="searchTF" destination="wFF-cj-xoy" id="0um-n6-MFo"/>
@@ -82,13 +83,27 @@
                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </tableView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9T-fo-rIc">
+                            <rect key="frame" x="330" y="623" width="64" height="64"/>
+                            <color key="backgroundColor" red="0.90196078431372551" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="64" id="RvD-k4-Ynx"/>
+                                <constraint firstAttribute="width" constant="64" id="fZj-NM-bnP"/>
+                            </constraints>
+                            <state key="normal" image="floating-icon"/>
+                            <connections>
+                                <action selector="floatingBtnAction:" destination="-1" eventType="touchUpInside" id="lCB-sE-9sF"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="Yht-NO-4wb" secondAttribute="bottom" id="EBx-iP-Jgz"/>
                         <constraint firstAttribute="trailing" secondItem="Yht-NO-4wb" secondAttribute="trailing" constant="20" id="HaT-Uz-WcY"/>
+                        <constraint firstAttribute="bottom" secondItem="D9T-fo-rIc" secondAttribute="bottom" constant="20" id="c6R-ID-QFO"/>
                         <constraint firstItem="Yht-NO-4wb" firstAttribute="top" secondItem="nb3-PG-sDC" secondAttribute="top" constant="7.5" id="jqh-d5-Qkj"/>
                         <constraint firstItem="Yht-NO-4wb" firstAttribute="leading" secondItem="nb3-PG-sDC" secondAttribute="leading" constant="20" id="jsC-RT-eRv"/>
+                        <constraint firstAttribute="trailing" secondItem="D9T-fo-rIc" secondAttribute="trailing" constant="20" id="kPu-2l-Sct"/>
                     </constraints>
                 </view>
             </subviews>
@@ -110,6 +125,7 @@
         </view>
     </objects>
     <resources>
+        <image name="floating-icon" width="25" height="25"/>
         <image name="search-icon" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

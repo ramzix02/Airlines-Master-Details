@@ -19,20 +19,21 @@ class ListAirlinesVC: UIViewController {
     @IBOutlet var listingView: UIView!
     @IBOutlet var tableView: UITableView!
     
+    @IBOutlet var floatingBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
         setupTableView()
-        
 
     }
 
     func setupViews(){
         topView.addBottomShadow()
-        searchTF.addRoundedRadius(raduis: 6)
-        searchBtn.addRoundedRadius(raduis: 6)
+        searchTF.addRoundedRadiusWithShadow(raduis: 6)
+        searchBtn.addRoundedRadiusWithShadow(raduis: 6)
+        floatingBtn.setCircularWithShadow()
     }
     
     func setupTableView(){
@@ -43,7 +44,10 @@ class ListAirlinesVC: UIViewController {
 
     }
     
-
+    @IBAction func floatingBtnAction(_ sender: Any) {
+        print("Redirect to add new airline..")
+    }
+    
 }
 
 extension ListAirlinesVC: UITableViewDelegate, UITableViewDataSource{
@@ -54,7 +58,6 @@ extension ListAirlinesVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue() as ListAirlinesTVCell
-       
         cell.backgroundColor = UIColor.clear
         return cell
     }

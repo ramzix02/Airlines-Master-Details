@@ -44,4 +44,10 @@ extension UIView{
             self.layer.masksToBounds = false
         }
     
+    func addBorderAndRounded(){
+        self.layer.borderWidth = 1
+        self.layer.borderColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
+        self.layer.cornerRadius = 6
+    }
+    
 }

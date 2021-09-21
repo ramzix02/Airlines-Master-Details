@@ -31,7 +31,7 @@ class ListAirlinesVC: UIViewController {
 
     func setupViews(){
         topView.addBottomShadow()
-        searchTF.addRoundedRadiusWithShadow(raduis: 6)
+        //searchTF.addBorderAndRounded()
         searchBtn.addRoundedRadiusWithShadow(raduis: 6)
         floatingBtn.setCircularWithShadow()
     }

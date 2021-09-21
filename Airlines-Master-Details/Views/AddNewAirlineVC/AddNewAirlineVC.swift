@@ -31,15 +31,8 @@ class AddNewAirlineVC: UIViewController {
     
     func setupViews(){
         
-        nameTF.addRoundedRadiusWithShadow(raduis: 6)
-        sloganTF.addRoundedRadiusWithShadow(raduis: 6)
-        countryTF.addRoundedRadiusWithShadow(raduis: 6)
-        headquartersTF.addRoundedRadiusWithShadow(raduis: 6)
-        cancelTF.addRoundedRadiusWithShadow(raduis: 6)
-        confirmBtn.addRoundedRadiusWithShadow(raduis: 6)
-        cancelBtn.addRoundedRadiusWithShadow(raduis: 6)
-        cancelBtn.layer.borderWidth = 1
-        cancelBtn.layer.borderColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
+        confirmBtn.layer.cornerRadius = 6
+        cancelBtn.addBorderAndRounded()
     
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)

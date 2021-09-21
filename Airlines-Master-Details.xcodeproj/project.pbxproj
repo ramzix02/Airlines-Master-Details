@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,10 @@
 		0484E14D26FA041800A790D9 /* AirlineDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0484E14B26FA041800A790D9 /* AirlineDetailsVC.xib */; };
 		0484E15126FA0F5600A790D9 /* AddNewAirlineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0484E14F26FA0F5600A790D9 /* AddNewAirlineVC.swift */; };
 		0484E15226FA0F5600A790D9 /* AddNewAirlineVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0484E15026FA0F5600A790D9 /* AddNewAirlineVC.xib */; };
+		0484E15726FA2ECC00A790D9 /* Vodafone Rg Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0484E15426FA2ECC00A790D9 /* Vodafone Rg Regular.ttf */; };
+		0484E15826FA2ECC00A790D9 /* Vodafone Lt Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0484E15526FA2ECC00A790D9 /* Vodafone Lt Regular.ttf */; };
+		0484E15926FA2ECC00A790D9 /* Vodafone_Rg_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0484E15626FA2ECC00A790D9 /* Vodafone_Rg_Bold.ttf */; };
+		0484E15B26FA37A900A790D9 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0484E15A26FA37A900A790D9 /* TextField.swift */; };
 		3A77C48E17807EA1B85EAAFF /* Pods_Airlines_Master_Details.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98AEB8F42C8760CD94277A06 /* Pods_Airlines_Master_Details.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +49,10 @@
 		0484E14B26FA041800A790D9 /* AirlineDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AirlineDetailsVC.xib; sourceTree = "<group>"; };
 		0484E14F26FA0F5600A790D9 /* AddNewAirlineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewAirlineVC.swift; sourceTree = "<group>"; };
 		0484E15026FA0F5600A790D9 /* AddNewAirlineVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewAirlineVC.xib; sourceTree = "<group>"; };
+		0484E15426FA2ECC00A790D9 /* Vodafone Rg Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vodafone Rg Regular.ttf"; sourceTree = "<group>"; };
+		0484E15526FA2ECC00A790D9 /* Vodafone Lt Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vodafone Lt Regular.ttf"; sourceTree = "<group>"; };
+		0484E15626FA2ECC00A790D9 /* Vodafone_Rg_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Vodafone_Rg_Bold.ttf; sourceTree = "<group>"; };
+		0484E15A26FA37A900A790D9 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		07C60F7CB7E8F47696D4754D /* Pods-Airlines-Master-Details.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airlines-Master-Details.debug.xcconfig"; path = "Target Support Files/Pods-Airlines-Master-Details/Pods-Airlines-Master-Details.debug.xcconfig"; sourceTree = "<group>"; };
 		98AEB8F42C8760CD94277A06 /* Pods_Airlines_Master_Details.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Airlines_Master_Details.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99F67BC757DB813A7690D2F0 /* Pods-Airlines-Master-Details.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airlines-Master-Details.release.xcconfig"; path = "Target Support Files/Pods-Airlines-Master-Details/Pods-Airlines-Master-Details.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				0484E13E26F9ECE400A790D9 /* Extensions */,
+				0484E15C26FA388000A790D9 /* Custom */,
+				0484E15326FA2EA400A790D9 /* Fonts */,
 				047641FE26F9D1CF005AB13B /* Assets.xcassets */,
 				047641F226F9D1CD005AB13B /* AppDelegate.swift */,
 				047641F426F9D1CD005AB13B /* SceneDelegate.swift */,
@@ -153,7 +163,6 @@
 			children = (
 				0484E13F26F9ED0100A790D9 /* ViewExtension.swift */,
 				0484E14526F9F04C00A790D9 /* UITableView+Extensions.swift */,
-				0484E14726F9F93D00A790D9 /* CardView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -174,6 +183,25 @@
 				0484E15026FA0F5600A790D9 /* AddNewAirlineVC.xib */,
 			);
 			path = AddNewAirlineVC;
+			sourceTree = "<group>";
+		};
+		0484E15326FA2EA400A790D9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0484E15526FA2ECC00A790D9 /* Vodafone Lt Regular.ttf */,
+				0484E15426FA2ECC00A790D9 /* Vodafone Rg Regular.ttf */,
+				0484E15626FA2ECC00A790D9 /* Vodafone_Rg_Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0484E15C26FA388000A790D9 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				0484E14726F9F93D00A790D9 /* CardView.swift */,
+				0484E15A26FA37A900A790D9 /* TextField.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		9E1BD87A7D45B279CBDEC3AE /* Frameworks */ = {
@@ -255,9 +283,12 @@
 				0484E15226FA0F5600A790D9 /* AddNewAirlineVC.xib in Resources */,
 				0484E14426F9EF7100A790D9 /* ListAirlinesTVCell.xib in Resources */,
 				0476420226F9D1CF005AB13B /* LaunchScreen.storyboard in Resources */,
+				0484E15926FA2ECC00A790D9 /* Vodafone_Rg_Bold.ttf in Resources */,
 				0484E14D26FA041800A790D9 /* AirlineDetailsVC.xib in Resources */,
 				047641FF26F9D1CF005AB13B /* Assets.xcassets in Resources */,
+				0484E15726FA2ECC00A790D9 /* Vodafone Rg Regular.ttf in Resources */,
 				0484E13D26F9DB2900A790D9 /* ListAirlinesVC.xib in Resources */,
+				0484E15826FA2ECC00A790D9 /* Vodafone Lt Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0484E14326F9EF7100A790D9 /* ListAirlinesTVCell.swift in Sources */,
+				0484E15B26FA37A900A790D9 /* TextField.swift in Sources */,
 				0484E14626F9F04C00A790D9 /* UITableView+Extensions.swift in Sources */,
 				0484E15126FA0F5600A790D9 /* AddNewAirlineVC.swift in Sources */,
 				0484E14026F9ED0100A790D9 /* ViewExtension.swift in Sources */,

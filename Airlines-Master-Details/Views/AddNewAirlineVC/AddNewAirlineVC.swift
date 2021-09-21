@@ -43,10 +43,26 @@ class AddNewAirlineVC: UIViewController {
     }
     
     @IBAction func confirmBtnAction(_ sender: Any) {
-        self.dismiss(animated: true)
+        
+        //Validation in VM
+        validateTF(textField: nameTF)
+        validateTF(textField: sloganTF)
+        validateTF(textField: countryTF)
+        validateTF(textField: headquartersTF)
+        validateTF(textField: cancelTF)
     }
     
     @IBAction func cancelBtnAction(_ sender: Any) {
         self.dismiss(animated: true)
+    }
+}
+
+extension AddNewAirlineVC{
+    func validateTF(textField: UITextField) {
+        if textField.text?.count == 0{
+            (textField.layer.borderColor = #colorLiteral(red: 0.9019607843, green: 0, blue: 0, alpha: 1))
+        }else{
+            (textField.layer.borderColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1))
+        }
     }
 }

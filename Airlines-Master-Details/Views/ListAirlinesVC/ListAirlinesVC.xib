@@ -10,6 +10,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListAirlinesVC" customModule="Airlines_Master_Details" customModuleProvider="target">
             <connections>
+                <outlet property="listingView" destination="nb3-PG-sDC" id="AsX-Ps-YwF"/>
+                <outlet property="searchBtn" destination="HZh-ui-hZL" id="oWG-M9-aPL"/>
+                <outlet property="searchTF" destination="wFF-cj-xoy" id="0um-n6-MFo"/>
+                <outlet property="searchView" destination="PJI-HL-UVk" id="cm8-f4-6Vg"/>
+                <outlet property="tableView" destination="Yht-NO-4wb" id="WEE-2N-x0a"/>
+                <outlet property="titleLbl" destination="DCk-pm-DXa" id="gYW-O9-yie"/>
+                <outlet property="topView" destination="2I3-0i-19h" id="Q7F-ZR-3s7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,14 +24,95 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2I3-0i-19h" userLabel="Top View">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="94"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Countries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCk-pm-DXa">
+                            <rect key="frame" x="170" y="62" width="74" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="DCk-pm-DXa" secondAttribute="bottom" constant="11" id="CIV-Cl-Xv7"/>
+                        <constraint firstItem="DCk-pm-DXa" firstAttribute="centerX" secondItem="2I3-0i-19h" secondAttribute="centerX" id="Nbm-KY-CaT"/>
+                        <constraint firstAttribute="height" constant="94" id="lDn-JP-fm3"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJI-HL-UVk" userLabel="Search View">
+                    <rect key="frame" x="0.0" y="104" width="414" height="85"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search by airline name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wFF-cj-xoy">
+                            <rect key="frame" x="20" y="20" width="309" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="Del-lA-Guf"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZh-ui-hZL">
+                            <rect key="frame" x="349" y="20" width="45" height="45"/>
+                            <color key="backgroundColor" red="0.90196078431372551" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="45" id="9zT-ld-miY"/>
+                                <constraint firstAttribute="height" constant="45" id="DAl-hV-yP8"/>
+                            </constraints>
+                            <state key="normal" image="search-icon"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="wFF-cj-xoy" firstAttribute="centerY" secondItem="HZh-ui-hZL" secondAttribute="centerY" id="6Kx-ZA-CNw"/>
+                        <constraint firstItem="HZh-ui-hZL" firstAttribute="leading" secondItem="wFF-cj-xoy" secondAttribute="trailing" constant="20" id="Glm-8P-zvO"/>
+                        <constraint firstItem="wFF-cj-xoy" firstAttribute="leading" secondItem="PJI-HL-UVk" secondAttribute="leading" constant="20" id="Loe-Ed-9Im"/>
+                        <constraint firstItem="HZh-ui-hZL" firstAttribute="centerY" secondItem="PJI-HL-UVk" secondAttribute="centerY" id="X46-kX-JuD"/>
+                        <constraint firstAttribute="trailing" secondItem="HZh-ui-hZL" secondAttribute="trailing" constant="20" id="u5j-tn-FX5"/>
+                        <constraint firstAttribute="height" constant="85" id="z6p-rB-40V"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nb3-PG-sDC" userLabel="Listing View">
+                    <rect key="frame" x="0.0" y="189" width="414" height="707"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yht-NO-4wb">
+                            <rect key="frame" x="20" y="7.5" width="374" height="699.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Yht-NO-4wb" secondAttribute="bottom" id="EBx-iP-Jgz"/>
+                        <constraint firstAttribute="trailing" secondItem="Yht-NO-4wb" secondAttribute="trailing" constant="20" id="HaT-Uz-WcY"/>
+                        <constraint firstItem="Yht-NO-4wb" firstAttribute="top" secondItem="nb3-PG-sDC" secondAttribute="top" constant="7.5" id="jqh-d5-Qkj"/>
+                        <constraint firstItem="Yht-NO-4wb" firstAttribute="leading" secondItem="nb3-PG-sDC" secondAttribute="leading" constant="20" id="jsC-RT-eRv"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemGreenColor"/>
-            <point key="canvasLocation" x="26" y="100"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nb3-PG-sDC" secondAttribute="trailing" id="1Ph-aF-iTE"/>
+                <constraint firstAttribute="bottom" secondItem="nb3-PG-sDC" secondAttribute="bottom" id="3QB-09-sq1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2I3-0i-19h" secondAttribute="trailing" id="Atz-5Q-AdE"/>
+                <constraint firstItem="nb3-PG-sDC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GgR-H2-I0H"/>
+                <constraint firstItem="2I3-0i-19h" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Hy6-Ph-gqW"/>
+                <constraint firstItem="PJI-HL-UVk" firstAttribute="top" secondItem="2I3-0i-19h" secondAttribute="bottom" constant="10" id="RVs-R8-ruw"/>
+                <constraint firstItem="2I3-0i-19h" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RsV-I2-FRg"/>
+                <constraint firstItem="nb3-PG-sDC" firstAttribute="top" secondItem="PJI-HL-UVk" secondAttribute="bottom" id="kKv-X2-SqV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PJI-HL-UVk" secondAttribute="trailing" id="vl5-bM-O3x"/>
+                <constraint firstItem="PJI-HL-UVk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xbs-gz-Udr"/>
+            </constraints>
+            <point key="canvasLocation" x="24.637681159420293" y="99.776785714285708"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="search-icon" width="25" height="25"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

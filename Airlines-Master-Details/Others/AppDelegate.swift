@@ -12,9 +12,25 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+//        window = UIWindow.init(frame: UIScreen.main.bounds)
+//        UITabBar.appearance().tintColor = #colorLiteral(red: 0.02114437334, green: 0.5130626559, blue: 0.5563324094, alpha: 1)
+//        
+//        let nav = UINavigationController()
+//        nav.isNavigationBarHidden = true
+//        nav.viewControllers = [ListAirlinesVC()]
+//        self.window!.rootViewController = nav
+//        
+//        guard window != nil else { return true }
+//        self.window!.backgroundColor = .darkGray
+//        self.window!.makeKeyAndVisible()
+        
+       // application.registerForRemoteNotifications()
+        
         return true
     }
 

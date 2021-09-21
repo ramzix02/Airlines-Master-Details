@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		047641F326F9D1CD005AB13B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047641F226F9D1CD005AB13B /* AppDelegate.swift */; };
 		047641F526F9D1CD005AB13B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047641F426F9D1CD005AB13B /* SceneDelegate.swift */; };
-		047641F726F9D1CD005AB13B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047641F626F9D1CD005AB13B /* ViewController.swift */; };
-		047641FA26F9D1CD005AB13B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047641F826F9D1CD005AB13B /* Main.storyboard */; };
 		047641FD26F9D1CD005AB13B /* Airlines_Master_Details.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 047641FB26F9D1CD005AB13B /* Airlines_Master_Details.xcdatamodeld */; };
 		047641FF26F9D1CF005AB13B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047641FE26F9D1CF005AB13B /* Assets.xcassets */; };
 		0476420226F9D1CF005AB13B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0476420026F9D1CF005AB13B /* LaunchScreen.storyboard */; };
+		0484E13C26F9DB2900A790D9 /* ListAirlinesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0484E13A26F9DB2900A790D9 /* ListAirlinesVC.swift */; };
+		0484E13D26F9DB2900A790D9 /* ListAirlinesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0484E13B26F9DB2900A790D9 /* ListAirlinesVC.xib */; };
 		3A77C48E17807EA1B85EAAFF /* Pods_Airlines_Master_Details.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98AEB8F42C8760CD94277A06 /* Pods_Airlines_Master_Details.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,12 +21,12 @@
 		047641EF26F9D1CD005AB13B /* Airlines-Master-Details.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Airlines-Master-Details.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		047641F226F9D1CD005AB13B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		047641F426F9D1CD005AB13B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		047641F626F9D1CD005AB13B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		047641F926F9D1CD005AB13B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		047641FC26F9D1CD005AB13B /* Airlines_Master_Details.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Airlines_Master_Details.xcdatamodel; sourceTree = "<group>"; };
 		047641FE26F9D1CF005AB13B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0476420126F9D1CF005AB13B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0476420326F9D1CF005AB13B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0484E13A26F9DB2900A790D9 /* ListAirlinesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAirlinesVC.swift; sourceTree = "<group>"; };
+		0484E13B26F9DB2900A790D9 /* ListAirlinesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListAirlinesVC.xib; sourceTree = "<group>"; };
 		07C60F7CB7E8F47696D4754D /* Pods-Airlines-Master-Details.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airlines-Master-Details.debug.xcconfig"; path = "Target Support Files/Pods-Airlines-Master-Details/Pods-Airlines-Master-Details.debug.xcconfig"; sourceTree = "<group>"; };
 		98AEB8F42C8760CD94277A06 /* Pods_Airlines_Master_Details.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Airlines_Master_Details.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99F67BC757DB813A7690D2F0 /* Pods-Airlines-Master-Details.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airlines-Master-Details.release.xcconfig"; path = "Target Support Files/Pods-Airlines-Master-Details/Pods-Airlines-Master-Details.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,16 +65,64 @@
 		047641F126F9D1CD005AB13B /* Airlines-Master-Details */ = {
 			isa = PBXGroup;
 			children = (
-				047641F226F9D1CD005AB13B /* AppDelegate.swift */,
-				047641F426F9D1CD005AB13B /* SceneDelegate.swift */,
-				047641F626F9D1CD005AB13B /* ViewController.swift */,
-				047641F826F9D1CD005AB13B /* Main.storyboard */,
-				047641FE26F9D1CF005AB13B /* Assets.xcassets */,
-				0476420026F9D1CF005AB13B /* LaunchScreen.storyboard */,
+				0484E13826F9D9F300A790D9 /* Models */,
+				0484E13726F9D9E400A790D9 /* ViewModels */,
+				0484E13626F9D9DA00A790D9 /* Views */,
+				0484E13526F9D9D100A790D9 /* Others */,
+				0484E13426F9D9BB00A790D9 /* Network-Layer */,
 				0476420326F9D1CF005AB13B /* Info.plist */,
-				047641FB26F9D1CD005AB13B /* Airlines_Master_Details.xcdatamodeld */,
 			);
 			path = "Airlines-Master-Details";
+			sourceTree = "<group>";
+		};
+		0484E13426F9D9BB00A790D9 /* Network-Layer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Network-Layer";
+			sourceTree = "<group>";
+		};
+		0484E13526F9D9D100A790D9 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				047641FE26F9D1CF005AB13B /* Assets.xcassets */,
+				047641F226F9D1CD005AB13B /* AppDelegate.swift */,
+				047641F426F9D1CD005AB13B /* SceneDelegate.swift */,
+				047641FB26F9D1CD005AB13B /* Airlines_Master_Details.xcdatamodeld */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		0484E13626F9D9DA00A790D9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0484E13926F9DAFC00A790D9 /* ListAirlinesVC */,
+				0476420026F9D1CF005AB13B /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0484E13726F9D9E400A790D9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0484E13826F9D9F300A790D9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0484E13926F9DAFC00A790D9 /* ListAirlinesVC */ = {
+			isa = PBXGroup;
+			children = (
+				0484E13A26F9DB2900A790D9 /* ListAirlinesVC.swift */,
+				0484E13B26F9DB2900A790D9 /* ListAirlinesVC.xib */,
+			);
+			path = ListAirlinesVC;
 			sourceTree = "<group>";
 		};
 		9E1BD87A7D45B279CBDEC3AE /* Frameworks */ = {
@@ -91,7 +139,6 @@
 				07C60F7CB7E8F47696D4754D /* Pods-Airlines-Master-Details.debug.xcconfig */,
 				99F67BC757DB813A7690D2F0 /* Pods-Airlines-Master-Details.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -155,7 +202,7 @@
 			files = (
 				0476420226F9D1CF005AB13B /* LaunchScreen.storyboard in Resources */,
 				047641FF26F9D1CF005AB13B /* Assets.xcassets in Resources */,
-				047641FA26F9D1CD005AB13B /* Main.storyboard in Resources */,
+				0484E13D26F9DB2900A790D9 /* ListAirlinesVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				047641F726F9D1CD005AB13B /* ViewController.swift in Sources */,
+				0484E13C26F9DB2900A790D9 /* ListAirlinesVC.swift in Sources */,
 				047641F326F9D1CD005AB13B /* AppDelegate.swift in Sources */,
 				047641F526F9D1CD005AB13B /* SceneDelegate.swift in Sources */,
 				047641FD26F9D1CD005AB13B /* Airlines_Master_Details.xcdatamodeld in Sources */,
@@ -201,14 +248,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		047641F826F9D1CD005AB13B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				047641F926F9D1CD005AB13B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0476420026F9D1CF005AB13B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -351,7 +390,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ramzy.Airlines-Master-Details";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -370,7 +409,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ramzy.Airlines-Master-Details";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -31,7 +31,7 @@ class AirlineDetailsVC: UIViewController {
     }
 
     @IBAction func backBtnAction(_ sender: Any) {
-        self.dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func visitBtnAction(_ sender: Any) {

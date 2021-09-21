@@ -46,6 +46,9 @@ class ListAirlinesVC: UIViewController {
     
     @IBAction func floatingBtnAction(_ sender: Any) {
         print("Redirect to add new airline..")
+        let vc = AddNewAirlineVC()
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: true)
     }
     
 }
@@ -59,11 +62,17 @@ extension ListAirlinesVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue() as ListAirlinesTVCell
         cell.backgroundColor = UIColor.clear
+        cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 82
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = AirlineDetailsVC()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     

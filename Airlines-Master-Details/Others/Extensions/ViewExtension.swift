@@ -10,6 +10,14 @@ import UIKit
 
 extension UIView{
     
+    func roundCorners(cornerRadius: Double, Corners:UIRectCorner) {
+          let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: Corners, cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+          let maskLayer = CAShapeLayer()
+          maskLayer.frame = self.bounds
+          maskLayer.path = path.cgPath
+          self.layer.mask = maskLayer
+      }
+    
     func addBottomShadow(){
         self.layer.masksToBounds = false
         self.layer.shadowRadius = 4

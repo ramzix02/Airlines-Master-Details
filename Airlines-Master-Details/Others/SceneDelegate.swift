@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -14,11 +15,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = true
+        
+        let nav = UINavigationController()
+        nav.isNavigationBarHidden = true
+        
         //Init VC is ListAirlinesVC
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         window?.makeKeyAndVisible()
-        window?.rootViewController = AirlineDetailsVC()
+        
+        nav.viewControllers = [ListAirlinesVC()]
+        window?.rootViewController = nav
+       // window?.rootViewController = ListAirlinesVC()
         
     }
 

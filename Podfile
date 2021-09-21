@@ -6,5 +6,6 @@ target 'Airlines-Master-Details' do
   use_frameworks!
 
   # Pods for Airlines-Master-Details
+  pod 'IQKeyboardManagerSwift'
 
 end

@@ -20,6 +20,8 @@
 		04149F5B26FB609700D8F3B8 /* ApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04149F5726FB609700D8F3B8 /* ApiHandler.swift */; };
 		04149F5D26FB60C200D8F3B8 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04149F5C26FB60C100D8F3B8 /* NetworkMonitor.swift */; };
 		04149F5F26FB61D200D8F3B8 /* APIInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04149F5E26FB61D200D8F3B8 /* APIInfo.swift */; };
+		042B8B8326FBF0DA00EAE5D9 /* AddAirlineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B8B8226FBF0DA00EAE5D9 /* AddAirlineModel.swift */; };
+		042B8B8526FBF14100EAE5D9 /* AddAirlineVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B8B8426FBF14100EAE5D9 /* AddAirlineVM.swift */; };
 		047641F326F9D1CD005AB13B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047641F226F9D1CD005AB13B /* AppDelegate.swift */; };
 		047641F526F9D1CD005AB13B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047641F426F9D1CD005AB13B /* SceneDelegate.swift */; };
 		047641FD26F9D1CD005AB13B /* Airlines_Master_Details.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 047641FB26F9D1CD005AB13B /* Airlines_Master_Details.xcdatamodeld */; };
@@ -61,6 +63,8 @@
 		04149F5726FB609700D8F3B8 /* ApiHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiHandler.swift; sourceTree = "<group>"; };
 		04149F5C26FB60C100D8F3B8 /* NetworkMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		04149F5E26FB61D200D8F3B8 /* APIInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIInfo.swift; sourceTree = "<group>"; };
+		042B8B8226FBF0DA00EAE5D9 /* AddAirlineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAirlineModel.swift; sourceTree = "<group>"; };
+		042B8B8426FBF14100EAE5D9 /* AddAirlineVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAirlineVM.swift; sourceTree = "<group>"; };
 		047641EF26F9D1CD005AB13B /* Airlines-Master-Details.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Airlines-Master-Details.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		047641F226F9D1CD005AB13B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		047641F426F9D1CD005AB13B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 				0490B54626FB77DD0097E57E /* BaseViewModel.swift */,
 				04149F3026FB183F00D8F3B8 /* ListAirlinesVM.swift */,
 				0490B54826FB79DF0097E57E /* AirlineDetailsVM.swift */,
+				042B8B8426FBF14100EAE5D9 /* AddAirlineVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 			children = (
 				04149F5126FB5E7400D8F3B8 /* ListAirlinesModel.swift */,
 				0490B54A26FB7A2F0097E57E /* AirlineDetails.swift */,
+				042B8B8226FBF0DA00EAE5D9 /* AddAirlineModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -423,9 +429,11 @@
 				04149F3326FB18BD00D8F3B8 /* State.swift in Sources */,
 				0484E13C26F9DB2900A790D9 /* ListAirlinesVC.swift in Sources */,
 				047641F326F9D1CD005AB13B /* AppDelegate.swift in Sources */,
+				042B8B8326FBF0DA00EAE5D9 /* AddAirlineModel.swift in Sources */,
 				04E04C3626FBBCDD001CBC8B /* RealmHelper.swift in Sources */,
 				04149F5B26FB609700D8F3B8 /* ApiHandler.swift in Sources */,
 				0490B54926FB79DF0097E57E /* AirlineDetailsVM.swift in Sources */,
+				042B8B8526FBF14100EAE5D9 /* AddAirlineVM.swift in Sources */,
 				0484E14C26FA041800A790D9 /* AirlineDetailsVC.swift in Sources */,
 				04149F5F26FB61D200D8F3B8 /* APIInfo.swift in Sources */,
 				0490B54726FB77DD0097E57E /* BaseViewModel.swift in Sources */,

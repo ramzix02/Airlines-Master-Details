@@ -25,3 +25,4 @@ struct ListAirlinesModelElement: Codable {
 }
 
 typealias ListAirlinesModel = [ListAirlinesModelElement]
+

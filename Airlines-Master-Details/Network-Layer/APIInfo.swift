@@ -37,4 +37,8 @@ struct APIInfo {
     static func getAirlineDetailsParams(id: String) -> [String: String] {
         return ["id": id]
     }
+    
+    static func postNewAirlineParams(dic: [String: String]) -> [String: String] {
+        return dic
+    }
 }

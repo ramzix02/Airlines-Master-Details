@@ -32,7 +32,53 @@ class ListAirlinesVC: UIViewController {
         setupTableView()
         initVM()
         
+
+     //   RealmHelper.shared.delete()
+        
+       // var array: [AirlineModel] = [AirlineModel]()
+        
+        
+        
+//        let object0 = ListAirlinesModel()
+//        object0.nam = "Awad"
+//        object0.id = 7
+//        array.append(object0)
+//        
+//        let object1 = ListAirlinesModel()
+//        object1.name = "Awad"
+//        object1.id = 8
+//        array.append(object1)
+//        
+//        let object2 = ListAirlinesModel()
+//        object2.name = "Asd"
+//        object2.id = 88
+//        array.append(object2)
+//
+//        //let array = [object0, object1, object2]
+//
+//        RealmHelper.shared.save(arrListAirlines: array)
+        
+        
+        
+        
+            //   RealmHelper.shared.render()
     }
+    
+    /*class AirlineModel : Object{
+     @objc dynamic var id: Double = 0.0
+     @objc dynamic var name: String = ""
+     @objc dynamic var country: String = ""
+     @objc dynamic var logo: String = ""
+     @objc dynamic var slogan: String = ""
+     @objc dynamic var headQuaters: String = ""
+     @objc dynamic var website: String = ""
+     @objc dynamic var established: String = ""
+     @objc dynamic var createdDate: String = ""
+     
+     override static func primaryKey() -> String? {
+         return "id"
+         }
+ }*/
     
 
     func initVM(){
@@ -135,7 +181,7 @@ extension ListAirlinesVC: UITableViewDelegate, UITableViewDataSource{
         let vc = AirlineDetailsVC()
         
         if let id = viewModel.getarrAirlines()[indexPath.row].id{
-            vc.id = id
+            vc.id = Double(id)
             self.navigationController?.pushViewController(vc, animated: true)
         }else{
             self.showToast(message: "No ID found for this trip!", font: .systemFont(ofSize: 12.0))
@@ -158,6 +204,4 @@ extension ListAirlinesVC: UITextFieldDelegate{
         return true
     }
 }
-
-
 

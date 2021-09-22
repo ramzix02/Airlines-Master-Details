@@ -13,6 +13,7 @@ enum NetworkingApi {
     case getSizes(photoId: String)
     case getAirlines
     case getAirlineDetails(id: String)
+    case postNewAirline(dic: [String: String])
 }
 
 extension NetworkingApi: Requestable {
@@ -29,6 +30,8 @@ extension NetworkingApi: Requestable {
     
     var method: HTTPMethod {
         switch self {
+        case .postNewAirline:
+            return .post
         default:
             return .get
         }
@@ -42,6 +45,8 @@ extension NetworkingApi: Requestable {
             return APIInfo.getSizesParams(photoId: photoId)
         case .getAirlineDetails(let id):
             return APIInfo.getAirlineDetailsParams(id: id)
+        case .postNewAirline(let dic):
+            return APIInfo.postNewAirlineParams(dic: dic)
         default:
             return [:]
         }
@@ -49,6 +54,8 @@ extension NetworkingApi: Requestable {
     
     var encoding: ParameterEncoding {
         switch self {
+        case .postNewAirline:
+            return JSONEncoding.default
         default:
             return URLEncoding.default
         }

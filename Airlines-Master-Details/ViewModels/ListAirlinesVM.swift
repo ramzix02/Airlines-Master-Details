@@ -24,19 +24,43 @@ class ListAirlinesVM: BaseViewModel {
         startRequest(request: NetworkingApi.getAirlines,
                      mappingClass: ListAirlinesModel.self) {[weak self] response in
             self?.arrListAirlines.append(contentsOf: response ?? [])
-            
+
+
+
             //Add to databse
             //name and id
             //redundent data --> primary key
-            
+
         }
     }
+    
+//    func getListAirlinesAPI() {
+//        startRequest(request: NetworkingApi.postNewAirline(dic: [
+//            "name":"111",
+//            "slogan":"222",
+//            "country":"333",
+//            "head_quaters":"444"
+//        ]),
+//                     mappingClass: AddAirlineModel.self) {[weak self] response in
+//            //self?.arrListAirlines.append(contentsOf: response ?? [])
+//
+//            print("hhhhhh: \(response)")
+//
+//            //Add to databse
+//            //name and id
+//            //redundent data --> primary key
+//
+//        }
+//    }
+
     
     func getarrAirlines() -> [ListAirlinesModelElement] {
         isFiltered ? filterArrListAirlines : arrListAirlines
     }
     
 }
+
+
 
 
 //MARK: - Searching logic.

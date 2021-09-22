@@ -43,6 +43,7 @@
 		0490B54726FB77DD0097E57E /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490B54626FB77DD0097E57E /* BaseViewModel.swift */; };
 		0490B54926FB79DF0097E57E /* AirlineDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490B54826FB79DF0097E57E /* AirlineDetailsVM.swift */; };
 		0490B54B26FB7A2F0097E57E /* AirlineDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490B54A26FB7A2F0097E57E /* AirlineDetails.swift */; };
+		04E04C3626FBBCDD001CBC8B /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E04C3526FBBCDD001CBC8B /* RealmHelper.swift */; };
 		3A77C48E17807EA1B85EAAFF /* Pods_Airlines_Master_Details.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98AEB8F42C8760CD94277A06 /* Pods_Airlines_Master_Details.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		0490B54626FB77DD0097E57E /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		0490B54826FB79DF0097E57E /* AirlineDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineDetailsVM.swift; sourceTree = "<group>"; };
 		0490B54A26FB7A2F0097E57E /* AirlineDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineDetails.swift; sourceTree = "<group>"; };
+		04E04C3526FBBCDD001CBC8B /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		07C60F7CB7E8F47696D4754D /* Pods-Airlines-Master-Details.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airlines-Master-Details.debug.xcconfig"; path = "Target Support Files/Pods-Airlines-Master-Details/Pods-Airlines-Master-Details.debug.xcconfig"; sourceTree = "<group>"; };
 		98AEB8F42C8760CD94277A06 /* Pods_Airlines_Master_Details.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Airlines_Master_Details.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99F67BC757DB813A7690D2F0 /* Pods-Airlines-Master-Details.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airlines-Master-Details.release.xcconfig"; path = "Target Support Files/Pods-Airlines-Master-Details/Pods-Airlines-Master-Details.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,11 +116,11 @@
 			isa = PBXGroup;
 			children = (
 				04149F5C26FB60C100D8F3B8 /* NetworkMonitor.swift */,
+				04149F5426FB609700D8F3B8 /* Requestable.swift */,
+				04149F5526FB609700D8F3B8 /* NetworkingApi.swift */,
+				04149F5E26FB61D200D8F3B8 /* APIInfo.swift */,
 				04149F5726FB609700D8F3B8 /* ApiHandler.swift */,
 				04149F5626FB609700D8F3B8 /* ErrorHandler.swift */,
-				04149F5526FB609700D8F3B8 /* NetworkingApi.swift */,
-				04149F5426FB609700D8F3B8 /* Requestable.swift */,
-				04149F5E26FB61D200D8F3B8 /* APIInfo.swift */,
 			);
 			path = "Network-Layer";
 			sourceTree = "<group>";
@@ -147,8 +149,9 @@
 				0484E13826F9D9F300A790D9 /* Models */,
 				0484E13726F9D9E400A790D9 /* ViewModels */,
 				0484E13626F9D9DA00A790D9 /* Views */,
-				0484E13526F9D9D100A790D9 /* Others */,
 				04149F5326FB605E00D8F3B8 /* Network-Layer */,
+				04E04C3426FBBC7E001CBC8B /* DataBase */,
+				0484E13526F9D9D100A790D9 /* Others */,
 				0476420326F9D1CF005AB13B /* Info.plist */,
 			);
 			path = "Airlines-Master-Details";
@@ -157,10 +160,10 @@
 		0484E13526F9D9D100A790D9 /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				04149F3E26FB1F1E00D8F3B8 /* Assets */,
 				0484E13E26F9ECE400A790D9 /* Extensions */,
 				0484E15C26FA388000A790D9 /* Custom Classes */,
 				0484E15326FA2EA400A790D9 /* Fonts */,
+				04149F3E26FB1F1E00D8F3B8 /* Assets */,
 				047641FE26F9D1CF005AB13B /* Assets.xcassets */,
 				047641F226F9D1CD005AB13B /* AppDelegate.swift */,
 				047641F426F9D1CD005AB13B /* SceneDelegate.swift */,
@@ -258,6 +261,14 @@
 				04149F3226FB18BD00D8F3B8 /* State.swift */,
 			);
 			path = "Custom Classes";
+			sourceTree = "<group>";
+		};
+		04E04C3426FBBC7E001CBC8B /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				04E04C3526FBBCDD001CBC8B /* RealmHelper.swift */,
+			);
+			path = DataBase;
 			sourceTree = "<group>";
 		};
 		9E1BD87A7D45B279CBDEC3AE /* Frameworks */ = {
@@ -412,6 +423,7 @@
 				04149F3326FB18BD00D8F3B8 /* State.swift in Sources */,
 				0484E13C26F9DB2900A790D9 /* ListAirlinesVC.swift in Sources */,
 				047641F326F9D1CD005AB13B /* AppDelegate.swift in Sources */,
+				04E04C3626FBBCDD001CBC8B /* RealmHelper.swift in Sources */,
 				04149F5B26FB609700D8F3B8 /* ApiHandler.swift in Sources */,
 				0490B54926FB79DF0097E57E /* AirlineDetailsVM.swift in Sources */,
 				0484E14C26FA041800A790D9 /* AirlineDetailsVC.swift in Sources */,

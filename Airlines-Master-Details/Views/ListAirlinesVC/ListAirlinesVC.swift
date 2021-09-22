@@ -13,11 +13,7 @@ class ListAirlinesVC: UIViewController {
     @IBOutlet var titleLbl: UILabel!
     
     @IBOutlet var searchView: UIView!
-    @IBOutlet var searchTF: UITextField!{
-        didSet{
-            searchTF.delegate = self
-        }
-    }
+    @IBOutlet var searchTF: UITextField!{didSet{searchTF.delegate = self}}
     @IBOutlet var searchBtn: UIButton!
     
     @IBOutlet var listingView: UIView!
@@ -84,7 +80,6 @@ class ListAirlinesVC: UIViewController {
     }
     
     
-
     func setupViews(){
         topView.addBottomShadow()
         searchBtn.addRoundedRadiusWithShadow(raduis: 6)
@@ -103,6 +98,7 @@ class ListAirlinesVC: UIViewController {
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: true)
     }
+    
     @IBAction func filterBtnAction(_ sender: Any) {
         self.viewModel.searchInArray(filterText: searchTF.text ?? "")
         searchTF.resignFirstResponder()

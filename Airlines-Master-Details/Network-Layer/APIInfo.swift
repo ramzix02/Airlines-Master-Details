@@ -35,9 +35,6 @@ struct APIInfo {
     }
     
     static func getAirlineDetailsParams(id: String) -> [String: String] {
-        return [
-                "id": id,
-
-        ]
+        return ["id": id]
     }
 }

@@ -1,7 +1,6 @@
 PODS:
   - Alamofire (4.9.1)
   - IQKeyboardManagerSwift (6.5.6)
-  - Presentr (1.9)
   - PromiseKit (6.15.3):
     - PromiseKit/CorePromise (= 6.15.3)
     - PromiseKit/Foundation (= 6.15.3)
@@ -11,30 +10,33 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.15.3):
     - PromiseKit/CorePromise
-  - SwiftyJSON (4.2.0)
+  - Realm (10.1.4):
+    - Realm/Headers (= 10.1.4)
+  - Realm/Headers (10.1.4)
+  - RealmSwift (10.1.4):
+    - Realm (= 10.1.4)
 
 DEPENDENCIES:
   - Alamofire
   - IQKeyboardManagerSwift
-  - Presentr
   - PromiseKit (~> 6.8)
-  - SwiftyJSON (~> 4.2.0)
+  - RealmSwift
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - IQKeyboardManagerSwift
-    - Presentr
     - PromiseKit
-    - SwiftyJSON
+    - Realm
+    - RealmSwift
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
-  Presentr: 7078d7eb5d1661ebeaae60c9e42a1e534de1b993
   PromiseKit: 3b2b6995e51a954c46dbc550ce3da44fbfb563c5
-  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  Realm: 80f4fb2971ccb9adc27a47d0955ae8e533a7030b
+  RealmSwift: 0e566ca714edb377bba8ea0811eafcea0b93734e
 
-PODFILE CHECKSUM: f2ad781b39ffb335683d6b89aed308210ffd3bba
+PODFILE CHECKSUM: 016d2bef5448c1a7dda3a09cbc377c4d81e1ae6d
 
 COCOAPODS: 1.10.0

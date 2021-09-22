@@ -9,16 +9,26 @@
 
 import Foundation
 
-class ListAirlinesVM: BaseViewModel{
+class ListAirlinesVM: BaseViewModel {
     
     private var arrListAirlines = [ListAirlinesModelElement]()
     private var filterArrListAirlines = [ListAirlinesModelElement]()
+    
     var isFiltered: Bool = false
+    
+    //check neton
+    //if is on call api
+    //if not on call database
 
     func getListAirlinesAPI() {
         startRequest(request: NetworkingApi.getAirlines,
                      mappingClass: ListAirlinesModel.self) {[weak self] response in
             self?.arrListAirlines.append(contentsOf: response ?? [])
+            
+            //Add to databse
+            //name and id
+            //redundent data --> primary key
+            
         }
     }
     

@@ -9,9 +9,7 @@
 
 import Foundation
 
-
 class ListAirlinesVM: BaseViewModel{
-    
     
     private var arrListAirlines = [ListAirlinesModelElement]()
     private var filterArrListAirlines = [ListAirlinesModelElement]()
@@ -28,6 +26,12 @@ class ListAirlinesVM: BaseViewModel{
         isFiltered ? filterArrListAirlines : arrListAirlines
     }
     
+}
+
+
+//MARK: - Searching logic.
+extension ListAirlinesVM{
+    
     func searchInArray(filterText: String) {
         filterArrListAirlines = [ListAirlinesModelElement]()
         state = .loading
@@ -36,7 +40,11 @@ class ListAirlinesVM: BaseViewModel{
             isFiltered = false
         }else{
             isFiltered = true
-            filterArrListAirlines = arrListAirlines.filter {$0.name?.contains(filterText) ?? false}
+            
+            filterArrListAirlines = arrListAirlines.filter { airline in
+                return airline.name?.contains(filterText) ?? false || airline.country?.contains(filterText) ?? false ||
+                    "\(airline.id ?? -1 )" == filterText
+            }
         }
         
         checkEmptyState(count: filterArrListAirlines.count)
@@ -49,7 +57,4 @@ class ListAirlinesVM: BaseViewModel{
             state = .empty
         }
     }
-    
-    
-    
 }

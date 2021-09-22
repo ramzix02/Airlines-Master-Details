@@ -105,6 +105,7 @@ class ListAirlinesVC: UIViewController {
     }
     @IBAction func filterBtnAction(_ sender: Any) {
         self.viewModel.searchInArray(filterText: searchTF.text ?? "")
+        searchTF.resignFirstResponder()
     }
     
 }
@@ -136,8 +137,14 @@ extension ListAirlinesVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = AirlineDetailsVC()
-        vc.id = viewModel.getarrAirlines()[indexPath.row].id
-        self.navigationController?.pushViewController(vc, animated: true)
+        
+        if let id = viewModel.getarrAirlines()[indexPath.row].id{
+            vc.id = id
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else{
+            self.showToast(message: "No ID found for this trip!", font: .systemFont(ofSize: 12.0))
+        }
+        
     }
     
     

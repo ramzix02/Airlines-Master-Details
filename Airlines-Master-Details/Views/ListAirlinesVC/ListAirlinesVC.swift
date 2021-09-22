@@ -13,7 +13,11 @@ class ListAirlinesVC: UIViewController {
     @IBOutlet var titleLbl: UILabel!
     
     @IBOutlet var searchView: UIView!
-    @IBOutlet var searchTF: UITextField!
+    @IBOutlet var searchTF: UITextField!{
+        didSet{
+            searchTF.delegate = self
+        }
+    }
     @IBOutlet var searchBtn: UIButton!
     
     @IBOutlet var listingView: UIView!
@@ -34,9 +38,7 @@ class ListAirlinesVC: UIViewController {
         
     }
     
-    
 
-    
     func initVM(){
         
         viewModel.updateError = { [weak self] error in
@@ -66,6 +68,8 @@ class ListAirlinesVC: UIViewController {
                     
                 case .empty, .error:
                     self.view.hideIndicator()
+                    self.tableView.reloadData()
+                    print("Empty")
                     
                 case .populated:
                     self.view.hideIndicator()
@@ -99,13 +103,23 @@ class ListAirlinesVC: UIViewController {
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: true)
     }
+    @IBAction func filterBtnAction(_ sender: Any) {
+        self.viewModel.searchInArray(filterText: searchTF.text ?? "")
+    }
     
 }
 
 extension ListAirlinesVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.getarrAirlines().count
+
+        if viewModel.getarrAirlines().count == 0 {
+                self.tableView.setEmptyMessage("No data available!")
+            } else {
+                self.tableView.restore()
+            }
+
+            return viewModel.getarrAirlines().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -128,4 +142,19 @@ extension ListAirlinesVC: UITableViewDelegate, UITableViewDataSource{
     
     
 }
+
+
+extension ListAirlinesVC: UITextFieldDelegate{
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.viewModel.searchInArray(filterText: textField.text ?? "")
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.searchTF.resignFirstResponder()
+        return true
+    }
+}
+
+
 

@@ -7,5 +7,8 @@ target 'Airlines-Master-Details' do
 
   # Pods for Airlines-Master-Details
   pod 'IQKeyboardManagerSwift'
-
+  pod 'Alamofire'
+  pod "PromiseKit", "~> 6.8"
+  pod 'SwiftyJSON', '~> 4.2.0'
+  pod 'Presentr'
 end

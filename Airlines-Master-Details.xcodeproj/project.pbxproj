@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04149F3126FB183F00D8F3B8 /* ListAirlinesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04149F3026FB183F00D8F3B8 /* ListAirlinesVM.swift */; };
+		04149F3326FB18BD00D8F3B8 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04149F3226FB18BD00D8F3B8 /* State.swift */; };
+		04149F3726FB1B1C00D8F3B8 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04149F3626FB1B1C00D8F3B8 /* UIImageView+Extensions.swift */; };
+		04149F3926FB1B3900D8F3B8 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04149F3826FB1B3900D8F3B8 /* UIImage+Extensions.swift */; };
+		04149F3B26FB1BA800D8F3B8 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04149F3A26FB1BA800D8F3B8 /* UIViewController+Extensions.swift */; };
+		04149F4026FB1F3500D8F3B8 /* Loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04149F3F26FB1F3500D8F3B8 /* Loading.gif */; };
+		04149F5226FB5E7400D8F3B8 /* ListAirlinesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04149F5126FB5E7400D8F3B8 /* ListAirlinesModel.swift */; };
+		04149F5826FB609700D8F3B8 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04149F5426FB609700D8F3B8 /* Requestable.swift */; };
+		04149F5926FB609700D8F3B8 /* NetworkingApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04149F5526FB609700D8F3B8 /* NetworkingApi.swift */; };
+		04149F5A26FB609700D8F3B8 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04149F5626FB609700D8F3B8 /* ErrorHandler.swift */; };
+		04149F5B26FB609700D8F3B8 /* ApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04149F5726FB609700D8F3B8 /* ApiHandler.swift */; };
+		04149F5D26FB60C200D8F3B8 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04149F5C26FB60C100D8F3B8 /* NetworkMonitor.swift */; };
+		04149F5F26FB61D200D8F3B8 /* APIInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04149F5E26FB61D200D8F3B8 /* APIInfo.swift */; };
 		047641F326F9D1CD005AB13B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047641F226F9D1CD005AB13B /* AppDelegate.swift */; };
 		047641F526F9D1CD005AB13B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047641F426F9D1CD005AB13B /* SceneDelegate.swift */; };
 		047641FD26F9D1CD005AB13B /* Airlines_Master_Details.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 047641FB26F9D1CD005AB13B /* Airlines_Master_Details.xcdatamodeld */; };
@@ -27,10 +40,26 @@
 		0484E15826FA2ECC00A790D9 /* Vodafone Lt Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0484E15526FA2ECC00A790D9 /* Vodafone Lt Regular.ttf */; };
 		0484E15926FA2ECC00A790D9 /* Vodafone_Rg_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0484E15626FA2ECC00A790D9 /* Vodafone_Rg_Bold.ttf */; };
 		0484E15B26FA37A900A790D9 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0484E15A26FA37A900A790D9 /* TextField.swift */; };
+		0490B54726FB77DD0097E57E /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490B54626FB77DD0097E57E /* BaseViewModel.swift */; };
+		0490B54926FB79DF0097E57E /* AirlineDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490B54826FB79DF0097E57E /* AirlineDetailsVM.swift */; };
+		0490B54B26FB7A2F0097E57E /* AirlineDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490B54A26FB7A2F0097E57E /* AirlineDetails.swift */; };
 		3A77C48E17807EA1B85EAAFF /* Pods_Airlines_Master_Details.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98AEB8F42C8760CD94277A06 /* Pods_Airlines_Master_Details.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04149F3026FB183F00D8F3B8 /* ListAirlinesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAirlinesVM.swift; sourceTree = "<group>"; };
+		04149F3226FB18BD00D8F3B8 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		04149F3626FB1B1C00D8F3B8 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		04149F3826FB1B3900D8F3B8 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		04149F3A26FB1BA800D8F3B8 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		04149F3F26FB1F3500D8F3B8 /* Loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Loading.gif; sourceTree = "<group>"; };
+		04149F5126FB5E7400D8F3B8 /* ListAirlinesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAirlinesModel.swift; sourceTree = "<group>"; };
+		04149F5426FB609700D8F3B8 /* Requestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		04149F5526FB609700D8F3B8 /* NetworkingApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingApi.swift; sourceTree = "<group>"; };
+		04149F5626FB609700D8F3B8 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		04149F5726FB609700D8F3B8 /* ApiHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiHandler.swift; sourceTree = "<group>"; };
+		04149F5C26FB60C100D8F3B8 /* NetworkMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		04149F5E26FB61D200D8F3B8 /* APIInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIInfo.swift; sourceTree = "<group>"; };
 		047641EF26F9D1CD005AB13B /* Airlines-Master-Details.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Airlines-Master-Details.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		047641F226F9D1CD005AB13B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		047641F426F9D1CD005AB13B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +82,9 @@
 		0484E15526FA2ECC00A790D9 /* Vodafone Lt Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vodafone Lt Regular.ttf"; sourceTree = "<group>"; };
 		0484E15626FA2ECC00A790D9 /* Vodafone_Rg_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Vodafone_Rg_Bold.ttf; sourceTree = "<group>"; };
 		0484E15A26FA37A900A790D9 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		0490B54626FB77DD0097E57E /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		0490B54826FB79DF0097E57E /* AirlineDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineDetailsVM.swift; sourceTree = "<group>"; };
+		0490B54A26FB7A2F0097E57E /* AirlineDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineDetails.swift; sourceTree = "<group>"; };
 		07C60F7CB7E8F47696D4754D /* Pods-Airlines-Master-Details.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airlines-Master-Details.debug.xcconfig"; path = "Target Support Files/Pods-Airlines-Master-Details/Pods-Airlines-Master-Details.debug.xcconfig"; sourceTree = "<group>"; };
 		98AEB8F42C8760CD94277A06 /* Pods_Airlines_Master_Details.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Airlines_Master_Details.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99F67BC757DB813A7690D2F0 /* Pods-Airlines-Master-Details.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airlines-Master-Details.release.xcconfig"; path = "Target Support Files/Pods-Airlines-Master-Details/Pods-Airlines-Master-Details.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,6 +102,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04149F3E26FB1F1E00D8F3B8 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				04149F3F26FB1F3500D8F3B8 /* Loading.gif */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		04149F5326FB605E00D8F3B8 /* Network-Layer */ = {
+			isa = PBXGroup;
+			children = (
+				04149F5C26FB60C100D8F3B8 /* NetworkMonitor.swift */,
+				04149F5726FB609700D8F3B8 /* ApiHandler.swift */,
+				04149F5626FB609700D8F3B8 /* ErrorHandler.swift */,
+				04149F5526FB609700D8F3B8 /* NetworkingApi.swift */,
+				04149F5426FB609700D8F3B8 /* Requestable.swift */,
+				04149F5E26FB61D200D8F3B8 /* APIInfo.swift */,
+			);
+			path = "Network-Layer";
+			sourceTree = "<group>";
+		};
 		047641E626F9D1CD005AB13B = {
 			isa = PBXGroup;
 			children = (
@@ -95,24 +148,18 @@
 				0484E13726F9D9E400A790D9 /* ViewModels */,
 				0484E13626F9D9DA00A790D9 /* Views */,
 				0484E13526F9D9D100A790D9 /* Others */,
-				0484E13426F9D9BB00A790D9 /* Network-Layer */,
+				04149F5326FB605E00D8F3B8 /* Network-Layer */,
 				0476420326F9D1CF005AB13B /* Info.plist */,
 			);
 			path = "Airlines-Master-Details";
 			sourceTree = "<group>";
 		};
-		0484E13426F9D9BB00A790D9 /* Network-Layer */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Network-Layer";
-			sourceTree = "<group>";
-		};
 		0484E13526F9D9D100A790D9 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				04149F3E26FB1F1E00D8F3B8 /* Assets */,
 				0484E13E26F9ECE400A790D9 /* Extensions */,
-				0484E15C26FA388000A790D9 /* Custom */,
+				0484E15C26FA388000A790D9 /* Custom Classes */,
 				0484E15326FA2EA400A790D9 /* Fonts */,
 				047641FE26F9D1CF005AB13B /* Assets.xcassets */,
 				047641F226F9D1CD005AB13B /* AppDelegate.swift */,
@@ -136,6 +183,9 @@
 		0484E13726F9D9E400A790D9 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				0490B54626FB77DD0097E57E /* BaseViewModel.swift */,
+				04149F3026FB183F00D8F3B8 /* ListAirlinesVM.swift */,
+				0490B54826FB79DF0097E57E /* AirlineDetailsVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -143,6 +193,8 @@
 		0484E13826F9D9F300A790D9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				04149F5126FB5E7400D8F3B8 /* ListAirlinesModel.swift */,
+				0490B54A26FB7A2F0097E57E /* AirlineDetails.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,6 +215,9 @@
 			children = (
 				0484E13F26F9ED0100A790D9 /* ViewExtension.swift */,
 				0484E14526F9F04C00A790D9 /* UITableView+Extensions.swift */,
+				04149F3626FB1B1C00D8F3B8 /* UIImageView+Extensions.swift */,
+				04149F3826FB1B3900D8F3B8 /* UIImage+Extensions.swift */,
+				04149F3A26FB1BA800D8F3B8 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -195,13 +250,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		0484E15C26FA388000A790D9 /* Custom */ = {
+		0484E15C26FA388000A790D9 /* Custom Classes */ = {
 			isa = PBXGroup;
 			children = (
 				0484E14726F9F93D00A790D9 /* CardView.swift */,
 				0484E15A26FA37A900A790D9 /* TextField.swift */,
+				04149F3226FB18BD00D8F3B8 /* State.swift */,
 			);
-			path = Custom;
+			path = "Custom Classes";
 			sourceTree = "<group>";
 		};
 		9E1BD87A7D45B279CBDEC3AE /* Frameworks */ = {
@@ -287,6 +343,7 @@
 				0484E14D26FA041800A790D9 /* AirlineDetailsVC.xib in Resources */,
 				047641FF26F9D1CF005AB13B /* Assets.xcassets in Resources */,
 				0484E15726FA2ECC00A790D9 /* Vodafone Rg Regular.ttf in Resources */,
+				04149F4026FB1F3500D8F3B8 /* Loading.gif in Resources */,
 				0484E13D26F9DB2900A790D9 /* ListAirlinesVC.xib in Resources */,
 				0484E15826FA2ECC00A790D9 /* Vodafone Lt Regular.ttf in Resources */,
 			);
@@ -342,14 +399,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				0484E14326F9EF7100A790D9 /* ListAirlinesTVCell.swift in Sources */,
+				04149F5A26FB609700D8F3B8 /* ErrorHandler.swift in Sources */,
+				04149F3926FB1B3900D8F3B8 /* UIImage+Extensions.swift in Sources */,
+				04149F5926FB609700D8F3B8 /* NetworkingApi.swift in Sources */,
 				0484E15B26FA37A900A790D9 /* TextField.swift in Sources */,
+				04149F5D26FB60C200D8F3B8 /* NetworkMonitor.swift in Sources */,
+				04149F3B26FB1BA800D8F3B8 /* UIViewController+Extensions.swift in Sources */,
 				0484E14626F9F04C00A790D9 /* UITableView+Extensions.swift in Sources */,
 				0484E15126FA0F5600A790D9 /* AddNewAirlineVC.swift in Sources */,
 				0484E14026F9ED0100A790D9 /* ViewExtension.swift in Sources */,
+				04149F3726FB1B1C00D8F3B8 /* UIImageView+Extensions.swift in Sources */,
+				04149F3326FB18BD00D8F3B8 /* State.swift in Sources */,
 				0484E13C26F9DB2900A790D9 /* ListAirlinesVC.swift in Sources */,
 				047641F326F9D1CD005AB13B /* AppDelegate.swift in Sources */,
+				04149F5B26FB609700D8F3B8 /* ApiHandler.swift in Sources */,
+				0490B54926FB79DF0097E57E /* AirlineDetailsVM.swift in Sources */,
 				0484E14C26FA041800A790D9 /* AirlineDetailsVC.swift in Sources */,
+				04149F5F26FB61D200D8F3B8 /* APIInfo.swift in Sources */,
+				0490B54726FB77DD0097E57E /* BaseViewModel.swift in Sources */,
+				0490B54B26FB7A2F0097E57E /* AirlineDetails.swift in Sources */,
+				04149F5226FB5E7400D8F3B8 /* ListAirlinesModel.swift in Sources */,
+				04149F3126FB183F00D8F3B8 /* ListAirlinesVM.swift in Sources */,
 				047641F526F9D1CD005AB13B /* SceneDelegate.swift in Sources */,
+				04149F5826FB609700D8F3B8 /* Requestable.swift in Sources */,
 				0484E14826F9F93D00A790D9 /* CardView.swift in Sources */,
 				047641FD26F9D1CD005AB13B /* Airlines_Master_Details.xcdatamodeld in Sources */,
 			);
@@ -420,7 +492,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -475,7 +547,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

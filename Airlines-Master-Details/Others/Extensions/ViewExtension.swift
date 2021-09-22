@@ -50,4 +50,38 @@ extension UIView{
         self.layer.cornerRadius = 6
     }
     
+    static var imageView = UIImageView()
+    static var indicator = UIActivityIndicatorView()
+    static var LoadingView = UIView()
+    
+    func showIndicator(){
+         let Gif = UIImage.gif(name: "Loading")
+          UIView.LoadingView.frame = UIScreen.main.bounds
+          UIView.self.LoadingView.backgroundColor = UIColor.black
+          UIView.self.LoadingView.isUserInteractionEnabled = false
+          UIView.self.LoadingView.alpha = 0.5
+          UIView.indicator.isUserInteractionEnabled = false
+       
+          UIView.imageView.frame = CGRect(x: (UIView.self.LoadingView.frame.size.width / 2), y: (UIView.self.LoadingView.frame.size.height / 2), width: 70, height: 70)
+          
+          UIView.imageView.center =  UIView.self.LoadingView.center
+          UIView.imageView.contentMode = .scaleAspectFit
+        
+          DispatchQueue.main.async( execute: {
+              UIView.imageView.image = Gif
+              UIApplication.shared.keyWindow?.addSubview(UIView.self.LoadingView)
+              UIApplication.shared.keyWindow?.addSubview(UIView.self.imageView)
+              UIApplication.shared.beginIgnoringInteractionEvents()
+          })
+      }
+      func hideIndicator(){
+
+          DispatchQueue.main.async( execute:
+              {
+                  UIView.self.imageView.removeFromSuperview()
+                  UIView.self.LoadingView.removeFromSuperview()
+                  UIApplication.shared.endIgnoringInteractionEvents()
+          })
+      }
+    
 }

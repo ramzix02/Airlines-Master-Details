@@ -89,7 +89,6 @@ class AddNewAirlineVC: UIViewController {
     }
 }
 
-
 //MARK: - Setup views.
 extension AddNewAirlineVC{
     

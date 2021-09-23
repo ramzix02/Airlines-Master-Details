@@ -42,9 +42,6 @@ class ListAirlinesVM: BaseViewModel {
     
 }
 
-
-
-
 //MARK: - Searching logic.
 extension ListAirlinesVM{
     

@@ -23,7 +23,6 @@ class AirlineDetailsVM: BaseViewModel{
     }
 }
 
-
 //MARK: - Enhance URL String for the creation of URL Link.
 extension AirlineDetailsVM{
     func getWebsiteStr() -> String{

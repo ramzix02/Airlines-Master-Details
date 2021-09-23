@@ -9,7 +9,6 @@
 import UIKit
 import Network
 
- 
 class NetworkMonitor {
     static public let shared = NetworkMonitor()
     private var monitor: NWPathMonitor

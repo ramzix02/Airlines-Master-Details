@@ -9,5 +9,4 @@ target 'Airlines-Master-Details' do
   pod 'IQKeyboardManagerSwift'
   pod 'Alamofire'
   pod "PromiseKit", "~> 6.8"
-  pod 'RealmSwift'
 end

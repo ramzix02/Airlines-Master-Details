@@ -9,13 +9,13 @@ import Foundation
 
 // MARK: - ListAirlinesModelElement
 struct ListAirlinesModelElement: Codable {
-    let id: Double?
-    let name: String?
-    let country: String?
-    let logo: String?
-    let slogan, headQuaters: String?
-    let website: String?
-    let established, createdDate: String?
+    var id: Double?
+    var name: String?
+    var country: String?
+    var logo: String?
+    var slogan, headQuaters: String?
+    var website: String?
+    var established, createdDate: String?
 
     enum CodingKeys: String, CodingKey {
         case id, name, country, logo, slogan

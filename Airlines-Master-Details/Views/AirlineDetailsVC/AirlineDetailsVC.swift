@@ -65,14 +65,17 @@ class AirlineDetailsVC: UIViewController {
                 switch self.viewModel.state {
                 case .loading:
                     self.view.showIndicator()
+                    self.detailsView.alpha = 0
                     
                 case .empty, .error:
                     self.view.hideIndicator()
+                    self.detailsView.alpha = 0
                     
                 case .populated:
                     self.view.hideIndicator()
                     //Show Data
                     self.fillData(obj: self.viewModel.getAirlineDetails())
+                    self.detailsView.alpha = 1
                 }
                 
             }

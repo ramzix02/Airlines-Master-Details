@@ -61,7 +61,7 @@
                                 <constraint firstAttribute="height" constant="45" id="Del-lA-Guf"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="VodafoneLt-Regular" family="Vodafone Lt" pointSize="16"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZh-ui-hZL">
                             <rect key="frame" x="349" y="20" width="45" height="45"/>

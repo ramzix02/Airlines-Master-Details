@@ -24,7 +24,6 @@ class ListAirlinesVM: BaseViewModel {
         startRequest(request: NetworkingApi.getAirlines,
                      mappingClass: ListAirlinesModel.self) {[weak self] response in
             self?.arrListAirlines.append(contentsOf: response ?? [])
-            self?.arrListAirlines.reverse()
 
 
             //Add to databse
@@ -76,7 +75,7 @@ extension ListAirlinesVM{
             isFiltered = true
             
             filterArrListAirlines = arrListAirlines.filter { airline in
-                return airline.name?.contains(filterText) ?? false || airline.country?.contains(filterText) ?? false ||
+                return airline.name?.lowercased().contains(filterText) ?? false || airline.country?.lowercased().contains(filterText) ?? false ||
                     "\(airline.id ?? -1 )" == filterText
             }
         }

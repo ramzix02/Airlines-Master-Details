@@ -7,27 +7,27 @@
 
 import Foundation
 
+//MARK: - Handling States.
 class BaseViewModel: NSObject {
     
     private let api = ApiHandler()
-    
     var updateLoadingStatus: (()->())?
     var updateError: ((String)->())?
     var checkInternetConnection: (() -> ())?
-    
     var state: State = .empty {
         didSet {
             self.updateLoadingStatus?()
         }
     }
-    
+}
+
+//MARK: - Request.
+extension BaseViewModel{
     
     func startRequest<M: Codable>(request: Requestable, mappingClass: M.Type,successCompletion: @escaping((M?) -> Void), showLoading: Bool = true) {
-    
         if showLoading {
             state = .loading
         }
-        
         api.fetchData(request: request, mappingClass: mappingClass).done{[weak self] success in
             self?.state = .populated
             successCompletion(success)

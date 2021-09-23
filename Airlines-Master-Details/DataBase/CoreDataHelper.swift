@@ -8,10 +8,11 @@
 import UIKit
 import CoreData
 
+//MARK: - Configure RealData.
 class CoreDataHelper {
+    
     static let shared = CoreDataHelper()
     let managedContext : NSManagedObjectContext
-    
     var retrievedData : Array<NSManagedObject> = []
     
     private init() {
@@ -20,17 +21,18 @@ class CoreDataHelper {
         }else {
             managedContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         }
-        
+
     }
+}
+
+//MARK: - Write to database.
+extension CoreDataHelper{
     
     func insertAllAirlines(arrAirlines:[ListAirlinesModelElement],into entityName: String = "AirlineEntity") -> Void {
-        
         deleteAllAirlines()
-        
         let entity = NSEntityDescription.entity(forEntityName: entityName, in: managedContext)
         for airline in arrAirlines {
             let airlineToInsert = NSManagedObject(entity: entity!, insertInto: managedContext)
-            
             airlineToInsert.setValue(airline.name, forKey: CoreDataConstants.name.rawValue)
             airlineToInsert.setValue(airline.id, forKey: CoreDataConstants.id.rawValue)
             airlineToInsert.setValue(airline.country, forKey: CoreDataConstants.country.rawValue)
@@ -38,36 +40,21 @@ class CoreDataHelper {
             airlineToInsert.setValue(airline.slogan, forKey: CoreDataConstants.slogan.rawValue)
             airlineToInsert.setValue(airline.headQuaters, forKey: CoreDataConstants.headQuaters.rawValue)
             airlineToInsert.setValue(airline.website, forKey: CoreDataConstants.website.rawValue)
-            
             do{
                 try managedContext.save()
             } catch let error as NSError {
                 print(error)
             }
         }
-        
     }
-    
-    private func deleteAllAirlines(entityName : String = "AirlineEntity") -> Void{
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName : entityName)
-        if let result = try? managedContext.fetch(fetchRequest) {
-            for object in result {
-                managedContext.delete(object)
-                do{
-                    try managedContext.save()
-                } catch let error as NSError {
-                    print(error)
-                }
-            }
-        }
-    }
+}
+
+//MARK: - Read from database.
+extension CoreDataHelper{
     
     func retriveAllAirlines(entityName : String = "AirlineEntity") -> [ListAirlinesModelElement] {
-        
         var arrAirlines = [ListAirlinesModelElement]()
-        
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName : entityName)
-        
         do {
             retrievedData = try managedContext.fetch(fetchRequest)
         } catch let error as NSError {
@@ -88,6 +75,22 @@ class CoreDataHelper {
         }
         return arrAirlines
     }
+}
+
+//MARK: - Delete database.
+extension CoreDataHelper{
     
-    
+    private func deleteAllAirlines(entityName : String = "AirlineEntity") -> Void{
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName : entityName)
+        if let result = try? managedContext.fetch(fetchRequest) {
+            for object in result {
+                managedContext.delete(object)
+                do{
+                    try managedContext.save()
+                } catch let error as NSError {
+                    print(error)
+                }
+            }
+        }
+    }
 }

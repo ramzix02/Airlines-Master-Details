@@ -64,6 +64,8 @@ class AddNewAirlineVC: UIViewController {
                     
                 case .populated:
                     self.view.hideIndicator()
+                    self.dismiss(animated: true)
+                    RefreshNotificationCtr.post(name: NSNotification.Name(rawValue: RefreshBroadcast), object: nil)
                     
                 }
                 
@@ -91,27 +93,22 @@ class AddNewAirlineVC: UIViewController {
     
     @IBAction func confirmBtnAction(_ sender: Any) {
         
-        //Validation in VM
-        validateTF(textField: nameTF)
-        validateTF(textField: sloganTF)
-        validateTF(textField: countryTF)
-        validateTF(textField: headquartersTF)
-        validateTF(textField: cancelTF)
+        self.viewModel.name = nameTF.text
+        self.viewModel.slogan = sloganTF.text
+        self.viewModel.country = countryTF.text
+        self.viewModel.headQuarters = headquartersTF.text
         
-        viewModel.addAirline()
+        if self.viewModel.validateEntries(){
+            //Valid
+            self.viewModel.addAirline()
+        }else{
+            //Not Valid
+            showToast(message: "Please fill all fields first!", font: .systemFont(ofSize: 12.0))
+        }
+        
     }
     
     @IBAction func cancelBtnAction(_ sender: Any) {
         self.dismiss(animated: true)
-    }
-}
-
-extension AddNewAirlineVC{
-    func validateTF(textField: UITextField) {
-        if textField.text?.count == 0{
-            (textField.layer.borderColor = #colorLiteral(red: 0.9019607843, green: 0, blue: 0, alpha: 1))
-        }else{
-            (textField.layer.borderColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1))
-        }
     }
 }

@@ -24,7 +24,7 @@ class ListAirlinesVM: BaseViewModel {
         startRequest(request: NetworkingApi.getAirlines,
                      mappingClass: ListAirlinesModel.self) {[weak self] response in
             self?.arrListAirlines.append(contentsOf: response ?? [])
-
+            self?.arrListAirlines.reverse()
 
 
             //Add to databse

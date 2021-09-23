@@ -7,6 +7,9 @@
 
 import UIKit
 
+let RefreshNotificationCtr = NotificationCenter.default
+let RefreshBroadcast = "RefreshBroadcast"
+
 class ListAirlinesVC: UIViewController {
 
     @IBOutlet var topView: UIView!
@@ -25,13 +28,15 @@ class ListAirlinesVC: UIViewController {
         return ListAirlinesVM()
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
                 
         setupViews()
         setupTableView()
         initVM()
-        
+       
+        RefreshNotificationCtr.addObserver(self, selector: #selector(self.refreshRequest), name: Notification.Name(rawValue: RefreshBroadcast), object: nil)
 
      //   RealmHelper.shared.delete()
         
@@ -79,6 +84,10 @@ class ListAirlinesVC: UIViewController {
          return "id"
          }
  }*/
+    
+    @objc func refreshRequest(notification: Notification){
+        viewModel.getListAirlinesAPI()
+    }
     
 
     func initVM(){
@@ -148,6 +157,10 @@ class ListAirlinesVC: UIViewController {
     @IBAction func filterBtnAction(_ sender: Any) {
         self.viewModel.searchInArray(filterText: searchTF.text ?? "")
         searchTF.resignFirstResponder()
+    }
+    
+    deinit {
+        RefreshNotificationCtr.removeObserver(self)
     }
     
 }

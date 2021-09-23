@@ -1,14 +1,23 @@
 # Airlines-Master-Details
 
+- Simple app to explore Airlines through the word, explore each one details and add your airline.
+
 ## Use
-- MVVM
-- Core Data
+
+- MVVM architecture.
+- CoreData for cashing.
 
 ## Pods
 
 - **Alamofire**:  HTTP Networking.
 - **PromiseKit**: Simplify the asynchronous tasks.
 - **IQKeyboardManagerSwift**: Handling keyboard.
+
+## Notes
+
+- Apis are droping cause of hight trafic.
+- Application is with it's own pods installed not to waste your time.
+- I am planing to inhance offline behaviour and use provider to inhance the app.
 
 ## ScreenShots
 

@@ -26,14 +26,11 @@ class AddAirlineVM: BaseViewModel {
         }
     }
     
-    private func getRandomID() -> String {
-        let date = Date()
-        let timeInterval = date.timeIntervalSince1970
-        let intTimeInterval = Int(timeInterval)
-        let uniqueID = String(intTimeInterval)
-        return uniqueID
-    }
+}
 
+//MARK: - Validate Inputs.
+extension AddAirlineVM{
+    
     func validateEntryField(text: String) -> Bool{
         text.isEmpty ? false : true
     }
@@ -62,5 +59,15 @@ class AddAirlineVM: BaseViewModel {
     private func isValidInput(Input: String) -> Bool{
         Input.isEmpty ? false : true
     }
-    
+}
+
+//MARK: - Make ID for the request.
+extension AddAirlineVM{
+    private func getRandomID() -> String {
+        let date = Date()
+        let timeInterval = date.timeIntervalSince1970
+        let intTimeInterval = Int(timeInterval)
+        let uniqueID = String(intTimeInterval)
+        return uniqueID
+    }
 }

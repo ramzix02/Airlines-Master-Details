@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: - Determine the state of VM.
 public enum State {
     case loading
     case error

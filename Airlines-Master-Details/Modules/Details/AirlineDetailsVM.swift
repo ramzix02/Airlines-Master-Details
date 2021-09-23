@@ -7,9 +7,7 @@
 
 import Foundation
 
-
 class AirlineDetailsVM: BaseViewModel{
-    
     
     private var airlineDetailsObj: AirlineDetailsModel?
 
@@ -23,12 +21,14 @@ class AirlineDetailsVM: BaseViewModel{
     func getAirlineDetails() -> AirlineDetailsModel? {
         return airlineDetailsObj
     }
-    
+}
+
+
+//MARK: - Enhance URL String for the creation of URL Link.
+extension AirlineDetailsVM{
     func getWebsiteStr() -> String{
         let urlString = airlineDetailsObj?.website ?? ""
         let validUrlString = urlString.hasPrefix("http") ? urlString : "http://\(urlString)"
         return validUrlString
     }
-    
-    
 }

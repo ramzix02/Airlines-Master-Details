@@ -10,17 +10,8 @@ import Foundation
 import UIKit
 import ImageIO
 
+//MARK: - Load GIF Images.
 extension UIImageView {
-
-    public func loadGif(name: String) {
-        DispatchQueue.global().async {
-            let image = UIImage.gif(name: name)
-            DispatchQueue.main.async {
-                self.image = image
-            }
-        }
-    }
-
     @available(iOS 9.0, *)
     public func loadGif(asset: String) {
         DispatchQueue.global().async {

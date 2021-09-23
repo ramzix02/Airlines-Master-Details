@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: - Entities for CoreData.
 enum CoreDataConstants: String {
     case id
     case name

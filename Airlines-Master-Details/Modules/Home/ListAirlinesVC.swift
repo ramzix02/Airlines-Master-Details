@@ -27,37 +27,26 @@ class ListAirlinesVC: UIViewController {
     lazy var viewModel: ListAirlinesVM = {
         return ListAirlinesVM()
     }()
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-                
         setupViews()
         setupTableView()
         initVM()
-       
-        RefreshNotificationCtr.addObserver(self, selector: #selector(self.refreshRequest), name: Notification.Name(rawValue: RefreshBroadcast), object: nil)
+        setupObservers()
     }
     
-    @objc func refreshRequest(notification: Notification){
-        viewModel.getListAirlinesAPI()
-    }
     
-
     func initVM(){
-        
         viewModel.updateError = { [weak self] error in
-            
             self?.view.hideIndicator()
             DispatchQueue.main.async {
                 self?.showErrorMsg(msg: error)
             }
         }
-        
         viewModel.checkInternetConnection = {[weak self] in
             self?.showErrorMsg(msg: ErrorHandler.noInternetConnection.rawValue)
         }
-        
         viewModel.updateLoadingStatus = { [weak self] () in
             guard let self = self else {
                 return
@@ -74,32 +63,15 @@ class ListAirlinesVC: UIViewController {
                 case .empty, .error:
                     self.view.hideIndicator()
                     self.tableView.reloadData()
-                    print("Empty")
                     
                 case .populated:
                     self.view.hideIndicator()
                     self.tableView.reloadData()
                     
                 }
-                
             }
-            
         }
         viewModel.getListAirlinesAPI()
-    }
-    
-    
-    func setupViews(){
-        topView.addBottomShadow()
-        searchBtn.addRoundedRadiusWithShadow(raduis: 6)
-        floatingBtn.setCircularWithShadow()
-    }
-    
-    func setupTableView(){
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.registerCellNib(cellClass: ListAirlinesTVCell.self)
-        tableView.backgroundColor = UIColor.clear
     }
     
     @IBAction func floatingBtnAction(_ sender: Any) {
@@ -119,6 +91,22 @@ class ListAirlinesVC: UIViewController {
     
 }
 
+//MARK: - Setup views.
+extension ListAirlinesVC{
+    func setupViews(){
+        topView.addBottomShadow()
+        searchBtn.addRoundedRadiusWithShadow(raduis: 6)
+        floatingBtn.setCircularWithShadow()
+    }
+    func setupTableView(){
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.registerCellNib(cellClass: ListAirlinesTVCell.self)
+        tableView.backgroundColor = UIColor.clear
+    }
+}
+
+//MARK: - TableView Delegates.
 extension ListAirlinesVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -153,22 +141,29 @@ extension ListAirlinesVC: UITableViewDelegate, UITableViewDataSource{
         }else{
             self.showToast(message: "No ID found for this trip!", font: .systemFont(ofSize: 12.0))
         }
-        
     }
-    
-    
 }
 
-
+//MARK: - TextField Delegates.
 extension ListAirlinesVC: UITextFieldDelegate{
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.viewModel.searchInArray(filterText: textField.text ?? "")
     }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.searchTF.resignFirstResponder()
         return true
     }
 }
 
+//MARK: - Add observers.
+extension ListAirlinesVC{
+    
+    func setupObservers(){
+        RefreshNotificationCtr.addObserver(self, selector: #selector(self.refreshRequest), name: Notification.Name(rawValue: RefreshBroadcast), object: nil)
+    }
+    
+    @objc func refreshRequest(notification: Notification){
+        viewModel.getListAirlinesAPI()
+    }
+    
+}

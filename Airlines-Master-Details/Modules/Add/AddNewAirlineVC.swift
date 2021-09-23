@@ -32,19 +32,15 @@ class AddNewAirlineVC: UIViewController {
     
     
     func initVM(){
-        
         viewModel.updateError = { [weak self] error in
-            
             self?.view.hideIndicator()
             DispatchQueue.main.async {
                 self?.showErrorMsg(msg: error)
             }
         }
-        
         viewModel.checkInternetConnection = {[weak self] in
             self?.showErrorMsg(msg: ErrorHandler.noInternetConnection.rawValue)
         }
-        
         viewModel.updateLoadingStatus = { [weak self] () in
             guard let self = self else {
                 return
@@ -66,29 +62,10 @@ class AddNewAirlineVC: UIViewController {
                     self.view.hideIndicator()
                     self.dismiss(animated: true)
                     RefreshNotificationCtr.post(name: NSNotification.Name(rawValue: RefreshBroadcast), object: nil)
-                    
                 }
                 
             }
-            
         }
-    }
-    
-    override func viewDidLayoutSubviews() {
-        popupView.roundCorners(cornerRadius: 20, Corners: [.topLeft,.topRight])
-    }
-    
-    func setupViews(){
-        
-        confirmBtn.layer.cornerRadius = 6
-        cancelBtn.addBorderAndRounded()
-    
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = view.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        blurView.addSubview(blurEffectView)
-        
     }
     
     @IBAction func confirmBtnAction(_ sender: Any) {
@@ -110,5 +87,24 @@ class AddNewAirlineVC: UIViewController {
     
     @IBAction func cancelBtnAction(_ sender: Any) {
         self.dismiss(animated: true)
+    }
+}
+
+
+//MARK: - Setup views.
+extension AddNewAirlineVC{
+    
+    override func viewDidLayoutSubviews() {
+        popupView.roundCorners(cornerRadius: 20, Corners: [.topLeft,.topRight])
+    }
+    
+    func setupViews(){
+        confirmBtn.layer.cornerRadius = 6
+        cancelBtn.addBorderAndRounded()
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurView.addSubview(blurEffectView)
     }
 }

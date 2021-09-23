@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+//MARK: - GIF Images.
 extension UIImage {
 
     public class func gif(data: Data) -> UIImage? {
@@ -18,22 +19,6 @@ extension UIImage {
         }
 
         return UIImage.animatedImageWithSource(source)
-    }
-
-    public class func gif(url: String) -> UIImage? {
-        // Validate URL
-        guard let bundleURL = URL(string: url) else {
-            print("SwiftGif: This image named \"\(url)\" does not exist")
-            return nil
-        }
-
-        // Validate data
-        guard let imageData = try? Data(contentsOf: bundleURL) else {
-            print("SwiftGif: Cannot turn image named \"\(url)\" into NSData")
-            return nil
-        }
-
-        return gif(data: imageData)
     }
 
     public class func gif(name: String) -> UIImage? {

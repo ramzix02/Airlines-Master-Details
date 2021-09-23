@@ -11,7 +11,7 @@ class AirlineDetailsVC: UIViewController {
     
     var id: Double?
     var companyWebsite: String = ""
-
+    
     @IBOutlet var topView: UIView!
     @IBOutlet var titleLbl: UILabel!
     @IBOutlet var detailsView: UIView!
@@ -33,26 +33,17 @@ class AirlineDetailsVC: UIViewController {
         initVM()
     }
     
-    func setupViews(){
-        topView.addBottomShadow()
-        visitBtn.addRoundedRadiusWithShadow(raduis: 6)
-    }
-    
     
     func initVM(){
-        
         viewModel.updateError = { [weak self] error in
-            
             self?.view.hideIndicator()
             DispatchQueue.main.async {
                 self?.showErrorMsg(msg: error)
             }
         }
-        
         viewModel.checkInternetConnection = {[weak self] in
             self?.showErrorMsg(msg: ErrorHandler.noInternetConnection.rawValue)
         }
-        
         viewModel.updateLoadingStatus = { [weak self] () in
             guard let self = self else {
                 return
@@ -77,27 +68,35 @@ class AirlineDetailsVC: UIViewController {
                     self.fillData(obj: self.viewModel.getAirlineDetails())
                     self.detailsView.alpha = 1
                 }
-                
             }
-            
         }
         if let id = self.id{
             viewModel.getAirlineDetailsAPI(id: "\(id)")
         }
-        
     }
-
+    
     @IBAction func backBtnAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func visitBtnAction(_ sender: Any) {
-        
         if let url = URL(string: self.viewModel.getWebsiteStr()) {
             UIApplication.shared.open(url)
         }
     }
-    
+
+}
+
+//MARK: - Setup views.
+extension AirlineDetailsVC{
+    func setupViews(){
+        topView.addBottomShadow()
+        visitBtn.addRoundedRadiusWithShadow(raduis: 6)
+    }
+}
+
+//MARK: - Fill your data.
+extension AirlineDetailsVC{
     func fillData(obj: AirlineDetailsModel?) {
         self.nameLbl.text = obj?.name
         self.countryLbl.text = obj?.country

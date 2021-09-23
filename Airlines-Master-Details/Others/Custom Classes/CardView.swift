@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+//MARK: - CardView with rounded corners and shadow.
 @IBDesignable
 class CardView: UIView {
     

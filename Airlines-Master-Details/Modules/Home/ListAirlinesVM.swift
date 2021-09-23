@@ -56,13 +56,11 @@ extension ListAirlinesVM{
             isFiltered = false
         }else{
             isFiltered = true
-            
             filterArrListAirlines = arrListAirlines.filter { airline in
                 return airline.name?.lowercased().contains(filterText) ?? false || airline.country?.lowercased().contains(filterText) ?? false ||
                     "\(airline.id ?? -1 )" == filterText
             }
         }
-        
         checkEmptyState(count: filterArrListAirlines.count)
     }
     

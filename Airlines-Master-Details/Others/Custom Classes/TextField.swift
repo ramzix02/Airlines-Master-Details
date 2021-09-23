@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: - Custom textfield with padding.
 class TextField: UITextField {
     
     func setup() {

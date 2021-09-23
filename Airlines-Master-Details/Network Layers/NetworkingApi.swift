@@ -39,10 +39,6 @@ extension NetworkingApi: Requestable {
     
     var parameters: [String: Any] {
         switch self {
-        case .getSearchPhotos(let page):
-            return APIInfo.getSearchParams(page: page)
-        case .getSizes(let photoId):
-            return APIInfo.getSizesParams(photoId: photoId)
         case .getAirlineDetails(let id):
             return APIInfo.getAirlineDetailsParams(id: id)
         case .postNewAirline(let dic):

@@ -152,6 +152,7 @@
 		042913F126FC986900CD8116 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				042913F626FC9B2900CD8116 /* LaunchScreen */,
 				042913F226FC988E00CD8116 /* Home */,
 				042913F326FC989300CD8116 /* Details */,
 				042913F426FC989B00CD8116 /* Add */,
@@ -193,10 +194,18 @@
 		042913F526FC98B900CD8116 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				0484E14126F9EF7100A790D9 /* ListAirlinesTVCell.swift */,
 				0484E14226F9EF7100A790D9 /* ListAirlinesTVCell.xib */,
+				0484E14126F9EF7100A790D9 /* ListAirlinesTVCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		042913F626FC9B2900CD8116 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0476420026F9D1CF005AB13B /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		047641E626F9D1CD005AB13B = {
@@ -222,7 +231,6 @@
 			children = (
 				0484E13826F9D9F300A790D9 /* Models */,
 				042913F126FC986900CD8116 /* Modules */,
-				0476420026F9D1CF005AB13B /* LaunchScreen.storyboard */,
 				04149F5326FB605E00D8F3B8 /* Network Layers */,
 				04E04C3426FBBC7E001CBC8B /* DataBase */,
 				0484E13526F9D9D100A790D9 /* Others */,
@@ -238,8 +246,8 @@
 				042913F026FC982400CD8116 /* Delegates */,
 				0484E13726F9D9E400A790D9 /* Base */,
 				0484E13E26F9ECE400A790D9 /* Extensions */,
-				0484E15C26FA388000A790D9 /* Custom Classes */,
 				042913ED26FC97B200CD8116 /* Enums */,
+				0484E15C26FA388000A790D9 /* Custom Classes */,
 				0484E15326FA2EA400A790D9 /* Fonts */,
 				04149F3E26FB1F1E00D8F3B8 /* Assets */,
 				047641FE26F9D1CF005AB13B /* Assets.xcassets */,

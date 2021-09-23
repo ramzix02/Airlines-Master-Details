@@ -13,7 +13,6 @@ class AddNewAirlineVC: UIViewController {
     @IBOutlet var sloganTF: UITextField!
     @IBOutlet var countryTF: UITextField!
     @IBOutlet var headquartersTF: UITextField!
-    @IBOutlet var cancelTF: UITextField!
     @IBOutlet var confirmBtn: UIButton!
     @IBOutlet var cancelBtn: UIButton!
     

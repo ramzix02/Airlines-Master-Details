@@ -15,6 +15,7 @@ class ListAirlinesVM: BaseViewModel {
     private var filterArrListAirlines = [ListAirlinesModelElement]()
     
     var isFiltered: Bool = false
+    var isLoadFirstTime: Bool = true
 
     func getListAirlinesAPI() {
         
@@ -23,9 +24,14 @@ class ListAirlinesVM: BaseViewModel {
                      mappingClass: ListAirlinesModel.self) {[weak self] response in
             self?.arrListAirlines.append(contentsOf: response ?? [])
             
-            if let arrListAirlines = self?.arrListAirlines{
-              CoreDataHelper.shared.insertAllAirlines(arrAirlines: arrListAirlines)
+            //update your cache if their are new data.
+            if self?.isLoadFirstTime ?? true{
+                if let arrListAirlines = self?.arrListAirlines{
+                  CoreDataHelper.shared.insertAllAirlines(arrAirlines: arrListAirlines)
+                }
+                self?.isLoadFirstTime = false
             }
+            
         }
             
         }else{
@@ -54,7 +60,7 @@ extension ListAirlinesVM{
         }else{
             isFiltered = true
             filterArrListAirlines = arrListAirlines.filter { airline in
-                return airline.name?.lowercased().contains(filterText) ?? false || airline.country?.lowercased().contains(filterText) ?? false ||
+                return airline.name?.lowercased().contains(filterText.lowercased()) ?? false || airline.country?.lowercased().contains(filterText.lowercased()) ?? false ||
                     "\(airline.id ?? -1 )" == filterText
             }
         }

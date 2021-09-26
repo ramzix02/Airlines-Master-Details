@@ -9,8 +9,6 @@ import Foundation
 import Alamofire
 
 enum NetworkingApi {
-    case getSearchPhotos(page: Int)
-    case getSizes(photoId: String)
     case getAirlines
     case getAirlineDetails(id: String)
     case postNewAirline(dic: [String: String])
